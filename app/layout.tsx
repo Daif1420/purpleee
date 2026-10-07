@@ -1,21 +1,7 @@
 import "./globals.css";
-import Link from "next/link";
-export const metadata = { title: "Purple", description: "Clothing, bags and accessories" };
+import Header from "@/components/Header";
+export const metadata = { title: "Purple", description: "كاجوال • هوم وير • حجاب • شنط" };
 export default function Root({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-      </head>
-      <body>
-        <header><div className="wrap">
-          <Link href="/" className="logo">Purple</Link>
-          <nav><Link href="/shop">Shop</Link><Link href="/shop">New arrivals</Link><Link href="/shop?sale=1">Sale</Link><Link href="/cart">Cart</Link></nav>
-        </div></header>
-        <main>{children}</main>
-        <footer><div className="wrap">© Purple. Shipping, returns and FAQ pages are next on the list.</div></footer>
-      </body>
-    </html>
-  );
+  return (<html lang="ar" dir="rtl"><body><Header />{children}
+    <footer className="mt-20 border-t border-neutral-200 py-10 text-center text-sm text-neutral-500">© Purple</footer></body></html>);
 }
